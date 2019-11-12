@@ -19,10 +19,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         super.viewDidLoad()
         // テストデータ
         allName += [
-            Name(data:(1,"Shiro")),
-            Name(data:(2,"Lina")),
-            Name(data:(3,"Wakaba")),
-            Name(data:(4,"Rin")),
+            Name(id:1,name:"Shiro"),
+            Name(id:2,name:"Lina"),
+            Name(id:3,name:"Wakaba"),
+            Name(id:4,name:"Rin"),
         ]
     }
     
@@ -36,29 +36,29 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         // セルを取得する
         let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         // セルに表示する値を設定する
-        cell.textLabel!.text = allName[indexPath.row].name
+        cell.textLabel!.text = allName[indexPath.row].Name
         return cell
     }
     
     // idソート
     @IBAction func idup(_ sender: Any) {
-        allName.sort { $0.id < $1.id }
+        allName.sort { $0.Id < $1.Id }
         tableview.reloadData()
     }
     // nameソート
     @IBAction func nameup(_ sender: Any) {
-         allName.sort { $0.name < $1.name }
+         allName.sort { $0.Name < $1.Name }
         tableview.reloadData()
     }
 }
 
-// カスタムクラス
-class Name:NSObject{
-    var id:Int
-    var name:String
-
-    init(data: (Int,String)){
-        id = data.0
-        name = data.1
+// 名前情報
+class Name{
+    let Id:Int
+    let Name:String
+    
+    init( id:Int, name:String ){
+        Id = id
+        Name = name
     }
 }
