@@ -40,13 +40,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     // idソート
     @IBAction func idup(_ sender: Any) {
-        print("idソート")
         allName.sort { $0.id < $1.id }
         tableview.reloadData()
     }
     // nameソート
     @IBAction func nameup(_ sender: Any) {
-        print("nameソート")
          allName.sort { $0.name < $1.name }
         tableview.reloadData()
     }
