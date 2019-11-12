@@ -18,10 +18,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     override func viewDidLoad() {
         super.viewDidLoad()
         // テストデータ
-        allName.append(Name(data:(1,"Shiro")))
-        allName.append(Name(data:(2,"Lina")))
-        allName.append(Name(data:(3,"Wakaba")))
-        allName.append(Name(data:(4,"Rin")))
+        allName += [
+            Name(data:(1,"Shiro")),
+            Name(data:(2,"Lina")),
+            Name(data:(3,"Wakaba")),
+            Name(data:(4,"Rin")),
+        ]
     }
     
     // セルの個数を指定するデリゲートメソッド
