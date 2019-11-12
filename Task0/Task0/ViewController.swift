@@ -8,16 +8,16 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ViewController: UIViewController, UITableViewDataSource {
     
-    // 表示リスト
+    /// 表示リスト
     var allName:[Name] = [Name]()
-    // テーブルビュー
+    ///リストのテーブル
     @IBOutlet weak var tableview: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // テストデータ
+        /// テストデータ
         allName += [
             Name(id:1,name:"Shiro"),
             Name(id:2,name:"Lina"),
@@ -25,38 +25,38 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             Name(id:4,name:"Rin"),
         ]
     }
-    
-    // セルの個数を指定するデリゲートメソッド
+    //MARK: - UITableViewDataSource
+    /// セルの個数を指定
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return allName.count
     }
     
-    // セルに値を設定するデータソースメソッド
+    /// セルに値を設定
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        // セルを取得する
+        /// セルを取得する
         let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        // セルに表示する値を設定する
+        /// セルに表示する値を設定する
         cell.textLabel!.text = allName[indexPath.row].Name
         return cell
     }
     
-    // idソート
+    //MARK: - ACTION
+    /// idソート
     @IBAction func idup(_ sender: Any) {
         allName.sort { $0.Id < $1.Id }
         tableview.reloadData()
     }
-    // nameソート
+    /// nameソート
     @IBAction func nameup(_ sender: Any) {
          allName.sort { $0.Name < $1.Name }
         tableview.reloadData()
     }
 }
 
-// 名前情報
+/// 名前情報
 class Name{
     let Id:Int
     let Name:String
-    
     init( id:Int, name:String ){
         Id = id
         Name = name
