@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina5_5" orientation="landscape" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -12,19 +12,33 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Task0" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="736" height="414"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="kfy-XJ-NoS">
-                                <rect key="frame" x="0.0" y="382" width="414" height="365"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hLs-Ft-Pgw">
+                                <rect key="frame" x="66.000000000000014" y="62" width="140.33333333333337" height="30"/>
+                                <state key="normal" title="ID昇順"/>
+                                <connections>
+                                    <action selector="idup:" destination="BYZ-38-t0r" eventType="touchUpInside" id="949-sS-hGb"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Ni5-8Y-K1t">
+                                <rect key="frame" x="206" y="44" width="117" height="66"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="NAME昇順"/>
+                                <connections>
+                                    <action selector="nameup:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Hiz-Zw-QP2"/>
+                                </connections>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="kfy-XJ-NoS">
+                                <rect key="frame" x="0.0" y="118" width="736" height="247"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="112" id="ioj-n6-rho">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="112"/>
+                                        <rect key="frame" x="0.0" y="28" width="736" height="112"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ioj-n6-rho" id="rQr-5W-2Yk">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="112"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="736" height="112"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -33,24 +47,18 @@
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="OGv-Fe-lht"/>
                                 </connections>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hLs-Ft-Pgw">
-                                <rect key="frame" x="41" y="255" width="117" height="66"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="ID昇順"/>
-                                <connections>
-                                    <action selector="idup:" destination="BYZ-38-t0r" eventType="touchUpInside" id="949-sS-hGb"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Ni5-8Y-K1t">
-                                <rect key="frame" x="233" y="255" width="117" height="66"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="NAME昇順"/>
-                                <connections>
-                                    <action selector="nameup:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Hiz-Zw-QP2"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="kfy-XJ-NoS" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="2qg-u9-xky"/>
+                            <constraint firstItem="kfy-XJ-NoS" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="MXE-Eb-pGP"/>
+                            <constraint firstItem="hLs-Ft-Pgw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="66" id="Oxb-EH-U9q"/>
+                            <constraint firstItem="Ni5-8Y-K1t" firstAttribute="leading" secondItem="hLs-Ft-Pgw" secondAttribute="trailing" constant="-0.33333333333331439" id="RcH-yK-I6r"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Ni5-8Y-K1t" secondAttribute="trailing" symbolic="YES" id="c7f-mc-9BD"/>
+                            <constraint firstItem="hLs-Ft-Pgw" firstAttribute="baseline" secondItem="Ni5-8Y-K1t" secondAttribute="baseline" id="igq-ri-6qm"/>
+                            <constraint firstItem="kfy-XJ-NoS" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="qWB-k2-4i8"/>
+                            <constraint firstItem="kfy-XJ-NoS" firstAttribute="top" secondItem="Ni5-8Y-K1t" secondAttribute="bottom" constant="8" id="sRD-69-hVv"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <toolbarItems/>
@@ -61,7 +69,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="137.68115942028987" y="137.94642857142856"/>
+            <point key="canvasLocation" x="136.95652173913044" y="137.68115942028987"/>
         </scene>
     </scenes>
 </document>
