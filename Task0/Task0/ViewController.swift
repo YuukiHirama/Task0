@@ -36,7 +36,7 @@ class ViewController: UIViewController, UITableViewDataSource {
         /// セルを取得する
         let nameCell: NameViewCell = tableView.dequeueReusableCell(withIdentifier: "NameCell", for: indexPath) as! NameViewCell
         /// 格セルに表示する値
-        nameCell.id.text = allName[indexPath.row].Id.description
+        nameCell.id.text = String(allName[indexPath.row].Id)
         nameCell.name.text = allName[indexPath.row].Name
         return nameCell
     }
