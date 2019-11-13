@@ -36,20 +36,20 @@ class ViewController: UIViewController, UITableViewDataSource {
         /// セルを取得する
         let nameCell: NameViewCell = tableView.dequeueReusableCell(withIdentifier: "NameCell", for: indexPath) as! NameViewCell
         /// 格セルに表示する値
-        nameCell.id.text = String(allName[indexPath.row].Id)
-        nameCell.name.text = allName[indexPath.row].Name
+        nameCell.id.text = String(allName[indexPath.row].id)
+        nameCell.name.text = allName[indexPath.row].name
         return nameCell
     }
     
     //MARK: - ACTION
     /// idソート
     @IBAction func idup(_ sender: Any) {
-        allName.sort { $0.Id < $1.Id }
+        allName.sort { $0.id < $1.id }
         tableview.reloadData()
     }
     /// nameソート
     @IBAction func nameup(_ sender: Any) {
-         allName.sort { $0.Name < $1.Name }
+         allName.sort { $0.name < $1.name }
         tableview.reloadData()
     }
 }

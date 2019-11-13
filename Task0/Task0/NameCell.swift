@@ -18,10 +18,10 @@ class NameViewCell: UITableViewCell{
 
 /// モデル側
 class NameModelCell{
-    let Id:Int
-    let Name:String
+    let id:Int
+    let name:String
     init( id:Int, name:String ){
-        Id = id
-        Name = name
+        self.id = id
+        self.name = name
     }
 }
