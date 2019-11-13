@@ -15,6 +15,7 @@
 		51D7E1CE23792ED600516D2F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 51D7E1CC23792ED600516D2F /* LaunchScreen.storyboard */; };
 		51D7E1D923792ED600516D2F /* Task0Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D7E1D823792ED600516D2F /* Task0Tests.swift */; };
 		51D7E1E423792ED600516D2F /* Task0UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D7E1E323792ED600516D2F /* Task0UITests.swift */; };
+		51D7E1F6237BC50A00516D2F /* NameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D7E1F5237BC50A00516D2F /* NameCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		51D7E1DF23792ED600516D2F /* Task0UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Task0UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		51D7E1E323792ED600516D2F /* Task0UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task0UITests.swift; sourceTree = "<group>"; };
 		51D7E1E523792ED600516D2F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		51D7E1F5237BC50A00516D2F /* NameCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 				51D7E1C123792ED500516D2F /* AppDelegate.swift */,
 				51D7E1C323792ED500516D2F /* SceneDelegate.swift */,
 				51D7E1C523792ED500516D2F /* ViewController.swift */,
+				51D7E1F5237BC50A00516D2F /* NameCell.swift */,
 				51D7E1C723792ED500516D2F /* Main.storyboard */,
 				51D7E1CA23792ED600516D2F /* Assets.xcassets */,
 				51D7E1CC23792ED600516D2F /* LaunchScreen.storyboard */,
@@ -261,6 +264,7 @@
 			files = (
 				51D7E1C623792ED500516D2F /* ViewController.swift in Sources */,
 				51D7E1C223792ED500516D2F /* AppDelegate.swift in Sources */,
+				51D7E1F6237BC50A00516D2F /* NameCell.swift in Sources */,
 				51D7E1C423792ED500516D2F /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

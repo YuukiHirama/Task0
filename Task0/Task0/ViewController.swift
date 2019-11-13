@@ -11,18 +11,18 @@ import UIKit
 class ViewController: UIViewController, UITableViewDataSource {
     
     /// 表示リスト
-    var allName:[Name] = [Name]()
+    var allName:[NameModelCell] = [NameModelCell]()
     ///リストのテーブル
     @IBOutlet weak var tableview: UITableView!
-    
+    /// 初期ロード
     override func viewDidLoad() {
         super.viewDidLoad()
         /// テストデータ
         allName += [
-            Name(id:1,name:"Shiro"),
-            Name(id:2,name:"Lina"),
-            Name(id:3,name:"Wakaba"),
-            Name(id:4,name:"Rin"),
+            NameModelCell(id:1,name:"Shiro"),
+            NameModelCell(id:2,name:"Lina"),
+            NameModelCell(id:3,name:"Wakaba"),
+            NameModelCell(id:4,name:"Rin"),
         ]
     }
     //MARK: - UITableViewDataSource
@@ -34,10 +34,11 @@ class ViewController: UIViewController, UITableViewDataSource {
     /// セルに値を設定
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         /// セルを取得する
-        let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        /// セルに表示する値を設定する
-        cell.textLabel!.text = allName[indexPath.row].Name
-        return cell
+        let nameCell: NameViewCell = tableView.dequeueReusableCell(withIdentifier: "NameCell", for: indexPath) as! NameViewCell
+        /// 格セルに表示する値
+        nameCell.id.text = allName[indexPath.row].Id.description
+        nameCell.name.text = allName[indexPath.row].Name
+        return nameCell
     }
     
     //MARK: - ACTION
@@ -50,15 +51,5 @@ class ViewController: UIViewController, UITableViewDataSource {
     @IBAction func nameup(_ sender: Any) {
          allName.sort { $0.Name < $1.Name }
         tableview.reloadData()
-    }
-}
-
-/// 名前情報
-class Name{
-    let Id:Int
-    let Name:String
-    init( id:Int, name:String ){
-        Id = id
-        Name = name
     }
 }
